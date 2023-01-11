@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Changa&display=swap" />
+
+  <title>Jessica Rodriguez - Coming Soon</title>
+
+  <style>
+    body {
+      width: 100vw;
+      height: 100vh;
+      margin: 0;
+      padding: 0;
+      font-family: "Changa", "Arial", sans-serif;
+
+      display: flex;
+      align-content: center;
+      align-items: center;
+      justify-content: center;
+      justify-items: center;
+    }
+
+    .main {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 100px;
+      align-items: center;
+      justify-content: center;
+      padding: 0 20px;
+    }
+
+    h1, h2, h3, h4, p {
+      margin: 0;
+    }
+    .subtext {
+      margin-bottom: 20px;
+    }
+    h2 {
+      font-size: 28px;
+    }
+
+    .contact {
+      margin: 15px 0;
+      text-align: center;
+    }
+    .contact, .my-work-and-cv {
+      margin-left: 8px;
+    }
+    .contact > span,
+    .my-work-and-cv > span {
+      display: block;
+      margin: 0;
+      line-height: 24px;
+      font-size: 17px;
+    }
+    .my-work-and-cv > a {
+      line-height: 40px;
+      height: 40px;
+      display: flex;
+      width: 100%;
+      justify-self: center;
+      justify-content: space-between;
+      text-decoration: none;
+    }
+    .my-work-and-cv > a::after {
+      content: '';
+      display: inline-block;
+      mask: url('/static/download.svg') no-repeat center;
+      mask-size: contain;
+      -webkit-mask: url('/static/download.svg') no-repeat center;
+      -webkit-mask-size: contain;
+      background-color: #2d728d;
+      width: 24px;
+      height: 100%;
+      transition: background-color 150ms ease-out;
+    }
+
+    a {
+      color: #2d728d;
+      transition: color 150ms ease-out;
+    }
+    a:hover {
+      color: #044848;
+    }
+    a:hover::after {
+      background-color: #044848;
+    }
+  </style>
+</head>
+<body>
+  <div class="main">
+    <div class="name">
+      <h1 class="name">Jessica A. Rodriguez</h1>
+      <p class="subtext">Artist & Designer - Digital/Fine Arts</p>
+    </div>
+
+    <div class="content">
+      <h2>Website Under Construction</h2>
+      <p>
+        My website is currently developed, come back soon!<br/>
+        <b>In the meantime, contact me or look at my work:</b>
+      </p>
+
+      <h4></h4>
+      <div class="contact">
+        <span>
+          <a href="mailto:hire@jessarod.com">hire@jessarod.com</a>
+          /
+          <a href="mailto:jess@yasfu.net">jess@yasfu.net</a>
+        </span>
+        <span><a href="tel:+18148268109">+1 (814) 826 - 8109</a></span>
+      </div>
+      <div class="my-work-and-cv">
+        <a href="/static/jess_rodriguez_resume.pdf"><span>My Resume</span></a>
+        <a href="/static/jess_rodriguez_work.zip"><span>Some of my Work (.ZIP)</span></a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

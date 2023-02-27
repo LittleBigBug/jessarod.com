@@ -1,9 +1,9 @@
 <div class="loading"></div>
 
 <style lang="scss">
-	@keyframes loading {
+  @keyframes loading {
       to { transform: translate(-50%, -50%) rotate(360deg); }
-	}
+  }
   .loading {
       position: absolute;
       top: 50%;
@@ -17,5 +17,5 @@
       background-position: center;
       background-size: contain;
       background-repeat: no-repeat;
-	}
+  }
 </style>

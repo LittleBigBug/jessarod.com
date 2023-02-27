@@ -29,7 +29,7 @@
       align-items: center;
       justify-content: center;
       color: white;
-	    text-shadow: black 2px 2px 2px;
+      text-shadow: black 2px 2px 2px;
       width: 100%;
       height: 100%;
       z-index: 2;
@@ -53,7 +53,7 @@
 
           &:hover {
               color: #c5c5c5;
-			        background: #212121;
+              background: #212121;
           }
       }
   }

@@ -15,18 +15,18 @@
 
 <style lang="scss">
 	.modal-bg {
-		position: fixed;
-	  z-index: 2000;
-	  display: flex;
-	  justify-content: center;
-	  align-items: center;
-	  background: rgba(0, 0, 0, 0.55);
-	  backdrop-filter: blur(1px);
-		width: 100vw;
-		height: 100vh;
-		top: 0;
-		left: 0;
-		right: 0;
-		bottom: 0;
+      position: fixed;
+      z-index: 2000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: rgba(0, 0, 0, 0.55);
+      backdrop-filter: blur(1px);
+      width: 100vw;
+      height: 100vh;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
 	}
 </style>

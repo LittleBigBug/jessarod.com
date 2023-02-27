@@ -9,6 +9,7 @@
     export let mouseUp = () => {};
     export let startRender = () => {};
     export let noLazyLoad = false;
+    export let style = "";
 
     let canvas, started = false, mounted = false, visible = false;
 
@@ -23,17 +24,11 @@
     $: mounted && canvas && (noLazyLoad || visible) && !started && start();
 </script>
 
-{#if !noLazyLoad}
-    <DetectVisible bind:visible once>
-        {visible}
-        <div class="canvas {$$props.class}"
-             bind:this={canvas}
-             on:mousemove={mouseMove} on:mouseout={mouseLeave} on:mousedown={mouseDown} on:mouseup={mouseUp}
-        />
-    </DetectVisible>
-{:else}
+<DetectVisible once {noLazyLoad}>
     <div class="canvas {$$props.class}"
+         {style}
          bind:this={canvas}
-         on:mousemove={mouseMove} on:mouseout={mouseLeave} on:mousedown={mouseDown} on:mouseup={mouseUp}
-    />
-{/if}
+         on:mousemove={mouseMove} on:mouseout={mouseLeave}
+         on:mousedown={mouseDown} on:mouseup={mouseUp}
+    ></div>
+</DetectVisible>

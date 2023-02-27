@@ -1,6 +1,7 @@
 <script>
     import { writable, get } from "svelte/store";
     import { setContext } from "svelte";
+    import { storeKeys } from "$lib/config";
 
     const itemsMap = writable(new Map());
     const observer = new IntersectionObserver(
@@ -17,7 +18,7 @@
         $itemsMap.set(item, visible);
     };
 
-    setContext('observer', add);
+    setContext(storeKeys.OBSERVER, add);
 </script>
 
 <slot />

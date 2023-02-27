@@ -1,15 +1,17 @@
 <script>
     import { writable } from "svelte/store";
     import { getContext, onMount } from "svelte";
+    import { storeKeys } from "$lib/config";
 
     export let once = false;
     export let visible = false;
+    export let noLazyLoad = false;
 
     const visibleStore = writable(false);
 
     let div, mounted = false, added = false;
 
-    const addObserver = getContext('observer');
+    const addObserver = getContext(storeKeys.OBSERVER);
     onMount(() => (mounted = true));
 
     const add = () => {
@@ -23,5 +25,7 @@
 </script>
 
 <div class="observed-container" bind:this={div}>
-    <slot />
+    {#if noLazyLoad || visible}
+        <slot />
+    {/if}
 </div>

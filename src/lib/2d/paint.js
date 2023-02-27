@@ -204,4 +204,4 @@ const draw = () => {
         };
 
     drawLines.push(...calcLines(mainLineData));
-}
+};

@@ -45,6 +45,22 @@
       column-count: 4;
       column-gap: 15px;
 
+	    @media (max-width: 1100px) {
+          -webkit-column-count: 3;
+          -moz-column-count: 3;
+          column-count: 3;
+	    }
+      @media (max-width: 850px) {
+          -webkit-column-count: 2;
+          -moz-column-count: 2;
+          column-count: 2;
+      }
+      @media (max-width: 850px) {
+          -webkit-column-count: 1;
+          -moz-column-count: 1;
+          column-count: 1;
+      }
+
       a {
           display: inline-block;
       }
@@ -63,10 +79,12 @@
               &::after {
                   content: '';
                   position: absolute;
-                  top: calc(50% - 15px);
+                  top: calc(50% - (15px / 2));
                   left: 50%;
                   width: 80px;
                   height: 85px;
+                  max-width: 50%;
+                  max-height: calc(100% - 15px);
                   transition: width 200ms ease;
                   transform: translate(-50%, -50%);
                   background-image: url("/img/icon/play.webp");

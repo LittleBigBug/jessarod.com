@@ -2,7 +2,7 @@
     import Nav from "$lib/components/Nav.svelte";
     import Footer from "$lib/components/Footer.svelte";
     import Modal from "$lib/components/modal/Modal.svelte";
-    import Observer from "$lib/components/Visible/Observer.svelte";
+    import Observer from "$lib/components/visible/Observer.svelte";
     import SmoothScrolling from "$lib/components/scrolling/SmoothScrolling.svelte";
 </script>
 

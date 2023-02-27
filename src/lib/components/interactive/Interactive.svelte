@@ -1,7 +1,7 @@
 <script>
     import { onMount } from "svelte";
     import { isDev } from "$lib/util/env";
-    import DetectVisible from "$lib/components/Visible/DetectVisible.svelte";
+    import DetectVisible from "$lib/components/visible/DetectVisible.svelte";
 
     export let mouseMove = () => {};
     export let mouseLeave = () => {};

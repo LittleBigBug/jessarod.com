@@ -33,6 +33,9 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
+	    text-align: center;
+      max-width: 90vw;
+      margin: 0 auto;
       color: white;
       text-shadow: black 2px 2px 2px;
       width: 100%;

@@ -2,7 +2,7 @@
   <div class="splash"></div>
   <div class="arrows"></div>
   <h1>Gallery</h1>
-  <h2>Keep scrolling to see my work!</h2>
+  <h2>Keep scrolling to see some of my work!</h2>
 </div>
 
 <style lang="scss">
@@ -19,6 +19,9 @@
             font-size: 3.5em;
             line-height: 1em;
         }
+        h2 {
+            max-width: 50%;
+        }
         h1, h2 {
             margin: 0;
             z-index: 1;
@@ -31,6 +34,7 @@
             left: 50%;
             transform: translate(-50%, -50%);
             width: 500px;
+            max-width: 80%;
             aspect-ratio: 608 / 456;
             background-image: url("/img/splash.webp");
             background-size: contain;

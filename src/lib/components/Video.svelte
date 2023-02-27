@@ -21,13 +21,14 @@
   div {
       display: flex;
       aspect-ratio: 16 / 9;
-      height: 100%;
+      max-width: 100%;
+	    height: 100%;
       justify-content: center;
       align-items: center;
 
       :global(vm-player) {
           width: 100%;
-          height: 100%;
+		      aspect-ratio: 16 / 9;
           display: inline-block;
           background: rgba(33, 33, 33, 0.98);
           border-radius: 6px;

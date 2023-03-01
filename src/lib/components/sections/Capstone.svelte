@@ -15,7 +15,7 @@
       width: 100%;
       height: 100%;
       filter: blur(20px);
-	    background: url("/img/gallery/capstone/close_1.jpeg") 0 50%;
+	    background: url("/img/gallery_home_thumb/capstone/close_1.jpeg") 0 50%;
       background-size: cover;
       box-shadow: inset 2px 2px 4px 1px black;
       display: flex;

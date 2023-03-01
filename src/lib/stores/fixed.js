@@ -18,7 +18,6 @@ export const fixedContainers = {
         const containers = get(this);
         let offset = 0;
         const i = this.getIndex(id);
-        console.log(id, i);
         for (let k = 0; k < i; k++) offset += containers[k].fixedHeight;
         return offset;
     }

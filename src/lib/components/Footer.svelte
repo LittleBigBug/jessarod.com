@@ -1,8 +1,6 @@
 <section class="footer">
   <div class="made-by">
-    <span>Made with</span>
-    <div class="heart"></div>
-    <span>by Ethan Jones</span>
+    <span>Site developed by Ethan Jones</span>
   </div>
 </section>
 

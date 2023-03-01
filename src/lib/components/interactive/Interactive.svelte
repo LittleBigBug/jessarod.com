@@ -18,7 +18,7 @@
     const start = () => {
         if (started) return;
         started = true;
-        startRender(canvas, { dev: isDev() });
+        startRender(canvas, isDev());
     };
 
     $: mounted && canvas && (noLazyLoad || visible) && !started && start();

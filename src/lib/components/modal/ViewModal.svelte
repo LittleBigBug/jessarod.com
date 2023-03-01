@@ -17,7 +17,6 @@
 
   const close = () => currentModal.set(undefined);
   const go = (store) => {
-    console.log(store);
     if (!store) return;
     const { gallery: newGallery, showing: newShowing } = store;
     gallery.set(newGallery)

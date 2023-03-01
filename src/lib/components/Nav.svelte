@@ -121,7 +121,7 @@
         }
 
         :global(.title) {
-            transition: font-size 0.5s ease,
+            transition: font-size 100ms ease,
             line-height 0.5s ease;
             font-size: 3.625rem;
             line-height: 3.75rem;

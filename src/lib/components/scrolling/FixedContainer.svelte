@@ -38,16 +38,18 @@
     $: z = 1000 - fixedContainers.getOffset(id);
     $: startTop = container?.offsetTop || 0;
     $: maxOffset = (scrollOnlySpacing ? spacingHeight : 5e+10);
-    $: offset = clamp($yScroll - startTop + fixedOffset, 0, maxOffset);
+    $: viewportRelation = $yScroll - startTop + fixedOffset;
+    $: offset = clamp(viewportRelation, 0, maxOffset);
+    $: fixed = viewportRelation >= 0 && viewportRelation <= maxOffset;
     $: scrolled = Math.max(0, $yScroll - startTop);
     $: normalHeight && fixedHeight && updateHeight(innerHeight, scrolled, fixedOffset);
     $: heightChangeDiff = normalHeight - fixedHeight;
     $: pctToFixed.set(heightChangeDiff > 0 ? clamp(scrolled / heightChangeDiff) : 1);
     $: style = [
-        `--z: ${z}`,
-        `--container-height: ${$height}px`,
-        `--spacing-height: ${spacingHeight}px`,
-        `--offset-top: ${offset}px`,
+      `--z: ${z}`,
+      `--container-height: ${$height}px`,
+      `--spacing-height: ${spacingHeight}px`,
+      `--fixed-offset: ${fixedOffset}px`,
     ].join(';');
     $: height && dispatch('heightChange', { height: $height });
 </script>
@@ -59,7 +61,7 @@
     class="container-spacing"
     bind:this={container}
 >
-    <div class="dynamic-container">
+    <div class="dynamic-container" class:fixed>
         <slot />
     </div>
 </div>
@@ -74,9 +76,12 @@
     .dynamic-container {
         width: 100%;
         height: var(--container-height);
-        transform: translateY(var(--offset-top));
-        position: absolute;
         overflow: hidden;
         z-index: var(--z);
+
+        &.fixed {
+            position: fixed;
+            top: var(--fixed-offset);
+        }
     }
 </style>

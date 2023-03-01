@@ -66,22 +66,40 @@
     };
 
     // Handle other scrolling (not smoothed)
-    const scroll = (y) => {
+    const scroll = () => {
       if ($scrollLock) return;
       if (Date.now() - lastScroll < (scrollTime * 1000)
         && y === Math.round($scrollPosition)) return;
 
-      debounceResetScrollPosition(y);
-      yScroll.set(y);
+      debounceResetScrollPosition(window.pageYOffset);
+      yScroll.set(window.pageYOffset);
     };
+
+    const scrollKeys = [
+      'Space', 'Home', 'End', 'PageUp', 'PageDown',
+      'ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight',
+    ];
+    const prevent = (e) => $scrollLock && e.preventDefault();
+    const preventScrollKeys = (e) =>
+      $scrollLock && scrollKeys.includes(e.code) && e.preventDefault();
+    const preventAutoScroll = (e) =>
+      $scrollLock && e.button === 1 && e.preventDefault();
 
     $: window && !disabled && window.scrollTo({ top: Math.round($scrollPosition) });
     $: !disabled && yScroll.set($scrollPosition);
-    $: disabled && yScroll.set(y);
+    $: disabled && yScroll.set(window.pageYOffset);
     $: $page && resetScrollPosition(0, true);
     $: scroll(y);
 </script>
 
-<svelte:window on:wheel|nonpassive={mouseWheel} bind:scrollY={y} />
+<div id="showScroll"></div>
+
+<svelte:window
+  bind:scrollY={y}
+  on:wheel|nonpassive={mouseWheel}
+  on:touchmove|nonpassive={prevent}
+  on:mousedown|nonpassive={preventAutoScroll}
+  on:keydown|nonpassive={preventScrollKeys}
+/>
 
 <slot />

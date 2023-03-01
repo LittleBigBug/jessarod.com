@@ -20,7 +20,7 @@
       width: 100%;
       height: 100%;
       filter: blur(10px);
-      background: url("/img/gallery/photography/abandoned_pa_turnpike_final.jpg") 0 50%;
+      background: url("/img/gallery_home_thumb/photography/abandoned_pa_turnpike_final.jpg") 0 50%;
       background-size: cover;
       box-shadow: inset 2px 2px 4px 1px black;
       display: flex;

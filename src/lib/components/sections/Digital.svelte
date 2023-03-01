@@ -23,7 +23,7 @@
       width: 100%;
       height: 100%;
       filter: blur(15px);
-      background: url("/img/gallery/digital/1spaceship_render.png") 0 50%;
+      background: url("/img/gallery_home_thumb/digital/1spaceship_render.png") 0 50%;
       background-size: cover;
       box-shadow: inset 2px 2px 4px 1px black;
       display: flex;

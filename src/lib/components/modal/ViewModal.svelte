@@ -16,6 +16,7 @@
   export let data;
 
   const close = () => currentModal.set(undefined);
+  const escape = (e) => e.code === 'Escape' && close();
   const go = (store) => {
     if (!store) return;
     const { gallery: newGallery, showing: newShowing } = store;
@@ -23,6 +24,8 @@
     showing.set(newShowing);
   };
 </script>
+
+<svelte:window on:keydown|nonpassive={escape} />
 
 <div class="show-modal">
   <div class="content">
@@ -74,6 +77,10 @@
             position: relative;
             justify-content: center;
             align-items: center;
+
+            @media (max-width: 700px) {
+                height: 50%;
+            }
 
             img {
                 max-height: 100%;

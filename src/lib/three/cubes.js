@@ -186,7 +186,7 @@ const initScene = () => {
 const clock = new Clock();
 
 const animate = () => {
-    stats.begin();
+    stats?.begin();
 
     const delta = clock.getDelta();
     const elapsed = clock.elapsedTime;

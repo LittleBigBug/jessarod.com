@@ -9,7 +9,6 @@
             entries.forEach((entry) => {
                 if (!$itemsMap.has(entry.target)) return;
                 const visibleStore = $itemsMap.get(entry.target);
-                console.log(get(visibleStore));
                 visibleStore.set(entry.isIntersecting);
             }), { threshold: [0, 1] });
 

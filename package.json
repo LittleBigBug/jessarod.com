@@ -19,7 +19,7 @@
 		"@pixi/graphics-smooth": "^0.0.30",
 		"@playwright/test": "1.25.0",
 		"@sveltejs/adapter-static": "^2.0.1",
-		"@sveltejs/kit": "^1.8.5",
+		"@sveltejs/kit": "^1.15.2",
 		"@vime/core": "^5.4.0",
 		"@vime/svelte": "^5.4.0",
 		"eslint": "^8.34.0",
